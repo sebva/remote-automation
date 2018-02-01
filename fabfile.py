@@ -28,7 +28,7 @@ def apt_install(packages):
 
 def install_usual_packages():
     update_pkg_db()
-    apt_install("tmux curl git build-essential mosh ca-certificates curl wget python python3")
+    apt_install("tmux curl git build-essential mosh ca-certificates curl wget python python3 htop")
 
 
 def zsh():
