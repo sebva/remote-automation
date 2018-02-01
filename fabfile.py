@@ -15,6 +15,11 @@ def update_pkg_db():
     sudo("apt-get -yq update")
 
 
+def upgrade_pkgs():
+    update_pkg_db()
+    sudo("apt-get -yq dist-upgrade")
+
+
 def apt_install(packages):
     if isinstance(packages, list):
         packages = " ".join(packages)
