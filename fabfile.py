@@ -34,7 +34,7 @@ def install_usual_packages():
 def zsh():
     update_pkg_db()
     apt_install("zsh zsh-antigen wget")
-    run("wget -O ~/.zshrc https://gist.github.com/sebyx31/1adeaa10995e124b4166/raw"
+    run("wget -O ~/.zshrc https://gist.github.com/sebva/1adeaa10995e124b4166/raw"
         "/5fffc1a28fb070e107d414fff8605ac13ba2253b/.zshrc")
     user = run("whoami")
     sudo("chsh -s /bin/zsh " + user)
