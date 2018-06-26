@@ -46,7 +46,8 @@ def install_sgx(trusted_platform_services=True):
     apt_install(
         "--no-install-recommends ca-certificates build-essential ocaml automake autoconf libtool wget python "
         "libssl-dev libcurl4-openssl-dev protobuf-compiler libprotobuf-dev alien cmake uuid-dev libxml2-dev "
-        "pkg-config ocamlbuild")
+        "pkg-config")
+    apt_install("ocamlbuild", warn_only=True)
     with cd(run("mktemp -d")):
         run("wget -O - https://github.com/01org/linux-sgx-driver/archive/sgx_driver_2.0.tar.gz | tar -xz")
         with cd("linux-sgx-driver-sgx_driver_2.0"):
