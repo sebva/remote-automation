@@ -39,6 +39,11 @@ def zsh():
     user = run("whoami")
     sudo("chsh -s /bin/zsh " + user)
 
+def disable_swap():
+    sudo("swapoff -a")
+    sudo("systemctl mask swap.img.swap")
+    sudo("sed -i'.bak' 's-/swap.img-# /swap.img-' /etc/fstab")
+    run("free")
 
 def install_sgx(trusted_platform_services=True):
     update_pkg_db()
