@@ -38,6 +38,7 @@ def zsh():
         "/5fffc1a28fb070e107d414fff8605ac13ba2253b/.zshrc")
     user = run("whoami")
     sudo("chsh -s /bin/zsh " + user)
+    sudo("curl -o /usr/share/zsh-antigen/antigen.zsh -sL https://git.io/antigen")
 
 def disable_swap():
     sudo("swapoff -a")
