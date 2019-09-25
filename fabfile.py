@@ -25,6 +25,11 @@ def apt_install(packages):
         packages = " ".join(packages)
     sudo("apt-get -yq install " + packages)
 
+def apt_purge(packages):
+    if isinstance(packages, list):
+        packages = " ".join(packages)
+    sudo("apt-get -yq purge " + packages)
+
 
 def install_usual_packages():
     update_pkg_db()
@@ -39,6 +44,16 @@ def zsh():
     user = run("whoami")
     sudo("chsh -s /bin/zsh " + user)
     sudo("curl -o /usr/share/zsh-antigen/antigen.zsh -sL https://git.io/antigen")
+
+def fish():
+    update_pkg_db()
+    apt_install("fish")
+    user = run("whoami")
+    sudo("chsh -s /usr/bin/fish " + user)
+
+def disable_ua():
+    apt_purge("ubuntu-advantage-tools")
+    sudo("sed -i'' 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news")
 
 def disable_swap():
     sudo("swapoff -a")
