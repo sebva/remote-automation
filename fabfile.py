@@ -34,7 +34,7 @@ def apt_purge(c, packages):
 @task
 def install_usual_packages(c):
     update_pkg_db(c)
-    apt_install(c, "tmux curl git build-essential mosh ca-certificates curl wget python python3 htop tree traceroute lm-sensors")
+    apt_install(c, "tmux curl git build-essential mosh ca-certificates curl wget python3 htop tree traceroute lm-sensors")
 
 
 @task
