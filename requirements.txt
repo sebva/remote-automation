@@ -1,8 +1,8 @@
 bcrypt==3.2.0
 cffi==1.14.6
 cryptography==3.4.8
-fabric==2.6.0
-invoke==1.6.0
+fabric==3.0.1
+invoke==2.0.0
 paramiko==2.7.2
 pathlib2==2.3.6
 pycparser==2.20
